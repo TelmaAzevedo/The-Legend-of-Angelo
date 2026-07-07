@@ -1,38 +1,90 @@
-width:320px;
-padding:12px;
-font-size:18px;
-text-align:center;
-background:#222;
-color:white;
-border:2px solid #00ff88;
-border-radius:8px;
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quem é este Pokémon?</title>
+
+<style>
+
+body{
+    background:#111;
+    color:#00ff88;
+    font-family:Consolas, monospace;
+    text-align:center;
+    margin:0;
+    padding:40px;
+    line-height:1.7;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:25px;
+}
+
+p{
+    font-size:22px;
+}
+
+img{
+    width:90%;
+    max-width:700px;
+    border:3px solid #00ff88;
+    border-radius:12px;
+    margin:35px 0;
+}
+
+input{
+
+    width:320px;
+    padding:12px;
+    font-size:18px;
+    text-align:center;
+    background:#222;
+    color:white;
+    border:2px solid #00ff88;
+    border-radius:8px;
 
 }
 
 button{
 
-margin-top:20px;
-padding:12px 30px;
-font-size:18px;
-cursor:pointer;
-border:none;
-border-radius:8px;
-background:#00ff88;
-color:#111;
-font-weight:bold;
+    margin-top:20px;
+    padding:12px 30px;
+    font-size:18px;
+    cursor:pointer;
+    border:none;
+    border-radius:8px;
+    background:#00ff88;
+    color:#111;
+    font-weight:bold;
 
 }
 
 button:hover{
 
-background:#00cc6a;
+    background:#00cc66;
 
 }
 
 #resultado{
 
-margin-top:30px;
-font-size:18px;
+    margin-top:35px;
+    font-size:20px;
+
+}
+
+a{
+
+    color:#00ff88;
+    text-decoration:none;
 
 }
 
@@ -44,27 +96,32 @@ font-size:18px;
 
 <div class="container">
 
-<h1>Quem é este Pokemon?</h1>
+<h1>Quem é este Pokémon?</h1>
 
 <p>
 
 Os neurónios já trabalharam o suficiente por hoje.<br>
-
 Depois de tudo o que resolveste até aqui,<br>
-
 este deve demorar uns... cinco segundos.
 
 </p>
 
-<img src="../images/pokemon.png">
+<img src="../images/pokemon.png" alt="Quem é este Pokémon?">
 
 <br>
 
-<input id="codigo" placeholder="Em maiúsculas">
+<input
+id="codigo"
+type="text"
+placeholder="Em maiúsculas">
 
 <br>
 
-<button onclick="verificar()">VALIDAR</button>
+<button onclick="verificar()">
+
+VALIDAR
+
+</button>
 
 <div id="resultado"></div>
 
@@ -74,11 +131,13 @@ este deve demorar uns... cinco segundos.
 
 function verificar(){
 
-let resposta=document.getElementById("codigo").value
+let resposta =
+document.getElementById("codigo")
+.value
 .trim()
 .toUpperCase();
 
-if(resposta=="SNORLAX"){
+if(resposta==="SNORLAX"){
 
 document.getElementById("resultado").innerHTML=`
 
@@ -86,10 +145,9 @@ document.getElementById("resultado").innerHTML=`
 
 <p>
 
-Parabéns!<br>
+Parabéns! Missão concluída.<br><br>
 
-Conseguiste identificar o pokemon lendário.<br>
-
+Conseguiste identificar o pokemon.<br>
 
 
 </p>
@@ -102,13 +160,13 @@ else{
 
 document.getElementById("resultado").innerHTML=`
 
-<h2>❌ TENTA NOVAMENTE</h2>
+<h2>❌ ACCESS DENIED</h2>
 
 <p>
 
 Esse não é o pokemon procurado.<br>
 
-Observa melhor a silhueta.
+Observa melhor a silhueta e tenta novamente.
 
 </p>
 
