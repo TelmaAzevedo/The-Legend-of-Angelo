@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
 
+<head>
+
+<meta charset="UTF-8">
+
+<title>Access Terminal</title>
+
+<style>
+
+body{
+
+background:#111;
+
+color:#00ff88;
+
+font-family:monospace;
+
+text-align:center;
+
+padding-top:80px;
+
+}
+
+input{
+
+padding:12px;
+
+font-size:20px;
+
+}
+
+button{
+
+padding:12px 25px;
+
+margin-top:20px;
+
+font-size:18px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>ACCESS TERMINAL</h1>
+
+<p>Introduz o código secreto</p>
+
+<input id="codigo">
+
+<br>
+
+<button onclick="verificar()">DESBLOQUEAR</button>
+
+<p id="resultado"></p>
+
+<script>
+
+function verificar(){
+
+let codigo=document.getElementById("codigo").value;
+
+if(codigo=="PLAYER22"){
+
+document.getElementById("resultado").innerHTML=
+
+'✅ ACCESS GRANTED<br><br><a href="https://spotify.com/..." target="_blank">Abrir Playlist</a>';
+
+}
+
+else{
+
+document.getElementById("resultado").innerHTML=
+
+'❌ ACCESS DENIED<br>Código incorreto.<br>Tenta novamente.';
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
