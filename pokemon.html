@@ -1,0 +1,124 @@
+width:320px;
+padding:12px;
+font-size:18px;
+text-align:center;
+background:#222;
+color:white;
+border:2px solid #00ff88;
+border-radius:8px;
+
+}
+
+button{
+
+margin-top:20px;
+padding:12px 30px;
+font-size:18px;
+cursor:pointer;
+border:none;
+border-radius:8px;
+background:#00ff88;
+color:#111;
+font-weight:bold;
+
+}
+
+button:hover{
+
+background:#00cc6a;
+
+}
+
+#resultado{
+
+margin-top:30px;
+font-size:18px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⭐ Último Desafio</h1>
+
+<p>
+
+Os neurónios já trabalharam o suficiente por hoje.<br>
+
+Depois de tudo o que resolveste até aqui,<br>
+
+este deve demorar uns... cinco segundos.
+
+</p>
+
+<img src="images/pokemon.png">
+
+<br>
+
+<input id="codigo" placeholder="Quem é este espécime?">
+
+<br>
+
+<button onclick="verificar()">VALIDAR</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function verificar(){
+
+let resposta=document.getElementById("codigo").value
+.trim()
+.toUpperCase();
+
+if(resposta=="SNORLAX"){
+
+document.getElementById("resultado").innerHTML=`
+
+<h2>🏆 Achievement Unlocked</h2>
+
+<p>
+
+Parabéns!<br>
+
+Conseguiste identificar o pokemon lendário.<br>
+
+
+
+</p>
+
+`;
+
+}
+
+else{
+
+document.getElementById("resultado").innerHTML=`
+
+<h2>❌ TENTA NOVAMENTE</h2>
+
+<p>
+
+Esse não é o pokemon procurado.<br>
+
+Observa melhor a silhueta.
+
+</p>
+
+`;
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
