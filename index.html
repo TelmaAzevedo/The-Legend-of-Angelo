@@ -1,83 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
-
 <meta charset="UTF-8">
-
-<title>Access Terminal</title>
+<title>Missão Banda Sonora</title>
 
 <style>
-
 body{
+    background:#111;
+    color:#00ff88;
+    font-family:Consolas, monospace;
+    text-align:center;
+    padding:50px;
+    line-height:1.6;
+}
 
-background:#111;
+.container{
+    max-width:800px;
+    margin:auto;
+}
 
-color:#00ff88;
+h1{
+    color:#00ff88;
+    margin-bottom:30px;
+}
 
-font-family:monospace;
-
-text-align:center;
-
-padding-top:80px;
-
+.enigma{
+    white-space:pre-line;
+    margin-bottom:40px;
 }
 
 input{
-
-padding:12px;
-
-font-size:20px;
-
+    width:300px;
+    padding:12px;
+    font-size:18px;
+    text-align:center;
+    background:#222;
+    color:white;
+    border:2px solid #00ff88;
+    border-radius:8px;
 }
 
 button{
-
-padding:12px 25px;
-
-margin-top:20px;
-
-font-size:18px;
-
+    margin-top:20px;
+    padding:12px 30px;
+    font-size:18px;
+    cursor:pointer;
+    border:none;
+    border-radius:8px;
+    background:#00ff88;
+    color:#111;
+    font-weight:bold;
 }
 
+button:hover{
+    background:#00cc6a;
+}
+
+#resultado{
+    margin-top:35px;
+    font-size:18px;
+}
+
+a{
+    color:#00ff88;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
 </style>
 
 </head>
 
 <body>
 
-<h1>ACCESS TERMINAL</h1>
+<div class="container">
 
-<p>Introduz o código secreto</p>
+<h1>🎵 Missão Banda Sonora</h1>
 
-<input id="codigo">
+<div class="enigma">
+
+Antes de ouvires esta canção,
+Terás de cumprir uma missão.
+A banda sonora está guardada,
+Por uma chave encriptada.
+
+As pistas estão mesmo à tua frente,
+Mas só as vê quem for paciente.
+Segue o caminho sem hesitar,
+
+E a música poderás escutar.
+
+Nem sempre importa a palavra inteira,
+Às vezes basta o primeiro passo.
+Cada nome deixa uma marca,
+Que não deves ignorar por acaso.
+
+Quando a chave estiver completa,
+Não a aceites como verdade.
+Lembra-te de um imperador antigo
+Que lhe dará uma nova identidade.
+
+O nível conquistado
+Vale mais do que imaginas.
+Nem todos os números contam níveis...
+Alguns também abrem cortinas.
+
+Observa tudo com atenção,
+Não te deixes enganar.
+Nem tudo é o que parece...
+Mas tudo está no lugar.
+
+</div>
+
+<input id="codigo" placeholder="Introduz o código secreto">
 
 <br>
 
 <button onclick="verificar()">DESBLOQUEAR</button>
 
-<p id="resultado"></p>
+<div id="resultado"></div>
+
+</div>
 
 <script>
 
 function verificar(){
 
-let codigo=document.getElementById("codigo").value;
+let codigo=document.getElementById("codigo").value.trim().toUpperCase();
 
-if(codigo=="PLAYER22"){
+if(codigo=="PTXSTKHIMHR"){
 
-document.getElementById("resultado").innerHTML=
+document.getElementById("resultado").innerHTML=`
+<h2>🏆 Achievement Unlocked</h2>
 
-'✅ ACCESS GRANTED<br><br><a href="https://spotify.com/..." target="_blank">Abrir Playlist</a>';
+<p>
+Parabéns, missão concluída!<br>
+A chave foi decifrada.<br>
+A banda sonora desta aventura<br>
+está finalmente desbloqueada.
+</p>
+
+<p>
+<a href="https://open.spotify.com/playlist/6pW6GTssA2OtvxxOI5u6Vd?si=ou6jzZSaTM-__FJw48F4eQ&pt=bd28ccf57c868e60e41ce1b415131d39&pi=He8PCyAsQMCXW" target="_blank">
+🎵 Ouvir a Banda Sonora
+</a>
+</p>
+`;
 
 }
 
 else{
 
-document.getElementById("resultado").innerHTML=
+document.getElementById("resultado").innerHTML=`
+<h2>❌ ACCESS DENIED</h2>
 
-'❌ ACCESS DENIED<br>Código incorreto.<br>Tenta novamente.';
+<p>
+A chave ainda não foi encontrada.<br>
+A missão continua por completar.<br>
+Volta às pistas com atenção,<br>
+E tenta o código decifrar.
+</p>
+`;
 
 }
 
@@ -86,5 +172,4 @@ document.getElementById("resultado").innerHTML=
 </script>
 
 </body>
-
 </html>
